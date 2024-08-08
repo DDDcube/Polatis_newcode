@@ -1,8 +1,10 @@
 
+
+The `Polatis` class is designed to interact with the Polatis optical switch, providing methods to apply patch lists, print patch tables, and save patch table information in a CSV format.
+
 ```markdown
 # Polatis Class Documentation
 
-The `Polatis` class is designed to interact with the Polatis optical switch, providing methods to apply patch lists, print patch tables, and save patch table information in a CSV format.
 
 ## Class Overview
 
@@ -66,7 +68,7 @@ def apply_patch_list(self, patch_list):
                            string represents the output component.
 
     Raises:
-        Exception: If the patch_list argument is not a list or if it is empty.
+        Exception: If one or more components are in use by another user.
         Exception: If some (or all) ports are not available in the patch_list.
 
     Returns:
@@ -80,6 +82,7 @@ def apply_patch_list(self, patch_list):
 patch_list = [('comp1', 'comp2'), ('comp2', 'comp3')]
 pol.apply_patch_list(patch_list)
 ```
+In case the ports are being shown to be used by another user and you require it, please contact the admin. 
 
 ---
 
@@ -166,5 +169,3 @@ pol.print_patch_table(patch_list)
 pol.get_patch_table_csv(patch_list, 'patch_table.csv')
 ```
 ```
-
-This markdown file provides a comprehensive guide to using the `Polatis` class, including method descriptions and usage examples.
